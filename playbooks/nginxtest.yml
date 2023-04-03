@@ -1,0 +1,17 @@
+-
+   name: simple html page on nginx web server
+   hosts: servers
+   become: true
+   tasks:
+     - name: install nginx web server
+       apt:
+         name: nginx
+         state: latest
+     - name: check ansible status
+       service: 
+         name: nginx
+         state: started
+     - name: check index page
+       copy:
+         src: index.html
+         dest: /var/www/html       

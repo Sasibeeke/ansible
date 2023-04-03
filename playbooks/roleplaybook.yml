@@ -1,0 +1,8 @@
+-
+  name: this playbook is example of roles in ansible
+  hosts: servers
+  become: true
+  roles: 
+     - webserver
+     - databaseserver
+

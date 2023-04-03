@@ -1,0 +1,16 @@
+-
+  name: this will install ngninx
+  hosts: servers
+  become: true
+  tasks:
+      - name: install nginx
+        apt:
+          name: nginx
+          state: present
+      - name: start nginx
+        systemd:
+          name: nginx
+          state: started
+          enabled: true  
+          
+    
