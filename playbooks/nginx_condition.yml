@@ -1,0 +1,11 @@
+-
+ name: based on condition docker install
+ hosts: servers
+ become: true
+ tasks:
+   - name: install docker on ubuntu 
+     apt: 
+       name: docker.io
+       state: latest
+     when: ansible_distribution == 'Ubuntu' or ansible_distribution == 'CentOS'
+
